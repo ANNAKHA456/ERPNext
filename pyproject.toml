@@ -3,7 +3,7 @@ name = "estate_app"
 authors = [
     { name = "Anna", email = "annakhamaria.acube@gmail.com"}
 ]
-description = "App for real estate transactions"
+description = "App for real estate"
 requires-python = ">=3.10"
 readme = "README.md"
 dynamic = ["version"]

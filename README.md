@@ -1,6 +1,6 @@
 ## Estate App
 
-App for real estate transactions
+App for real estate
 
 #### License
 

@@ -1,7 +1,7 @@
 app_name = "estate_app"
 app_title = "Estate App"
 app_publisher = "Anna"
-app_description = "App for real estate transactions"
+app_description = "App for real estate"
 app_email = "annakhamaria.acube@gmail.com"
 app_license = "mit"
 # required_apps = []
