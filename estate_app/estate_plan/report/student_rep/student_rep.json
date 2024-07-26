@@ -1,0 +1,22 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2024-06-12 15:33:40.538113",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letterhead": null,
+ "modified": "2024-06-12 15:33:40.538113",
+ "modified_by": "Administrator",
+ "module": "ESTATE PLAN",
+ "name": "Student Rep",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Student",
+ "report_name": "Student Rep",
+ "report_type": "Script Report",
+ "roles": []
+}

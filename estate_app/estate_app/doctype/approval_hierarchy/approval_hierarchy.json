@@ -1,0 +1,54 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-07-10 14:22:59.861522",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "approver_email",
+  "order",
+  "approver"
+ ],
+ "fields": [
+  {
+   "fetch_from": "approver.email",
+   "fieldname": "approver_email",
+   "fieldtype": "Data",
+   "label": "Approver Email"
+  },
+  {
+   "fieldname": "order",
+   "fieldtype": "Int",
+   "label": "Order"
+  },
+  {
+   "fieldname": "approver",
+   "fieldtype": "Link",
+   "label": "Approver",
+   "options": "User"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2024-07-10 14:27:55.855046",
+ "modified_by": "Administrator",
+ "module": "Estate App",
+ "name": "Approval Hierarchy",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

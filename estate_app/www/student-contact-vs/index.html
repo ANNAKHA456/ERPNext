@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Contact Details Form</title>
+    <meta name="csrf-token" content="{{ csrf_token }}"> <!-- Replace with actual token value -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f7fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 50%;
+            max-width: 700px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input, select, button {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 18px;
+            width: calc(100% - 32px); /* 100% width minus padding and border */
+        }
+
+        input:focus, select:focus {
+            border-color: #80bdff;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 18px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        button:active {
+            background-color: #004085;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+                margin: 20px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Student Contact Details Form</h1>
+        <form id="student-form">
+            <label for="register_number">Register Number:</label>
+            <input type="text" id="register_number" name="register_number" required>
+            
+            <label for="student_name">Name:</label>
+            <input type="text" id="student_name" name="student_name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="phone" required>
+            
+            <button type="button" onclick="saveStudentDetails()">Save</button>
+        </form>
+    </div>
+
+    <script>
+        async function saveStudentDetails() {
+            const registerNumber = document.getElementById('register_number').value;
+            const studentName = document.getElementById('student_name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+
+            const queryParams = new URLSearchParams({
+                register_number: registerNumber,
+                student_name: studentName,
+                email: email,
+                mobile_number: phone
+            }).toString();
+
+            const url = `http://demo01.com:8003/api/method/estate_app.api_files.contact_create.save_student_contact?${queryParams}`;
+            
+            // Get CSRF token from meta tag
+            const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+            console.log('Sending request to URL:', url);
+
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': csrfToken // Include CSRF token in the headers
+                    }
+                });
+
+                const result = await response.json();
+                console.log('Server response:', result);
+
+                if (response.ok && result.message === 'success') {
+                    alert('Student contact details saved successfully.');
+                } else {
+                    alert('Failed to save student contact details: ' + (result.message || response.statusText));
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred while saving student contact details.');
+            }
+        }
+    </script>
+</body>
+</html>

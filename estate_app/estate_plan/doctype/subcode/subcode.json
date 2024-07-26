@@ -1,0 +1,57 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:subject_code",
+ "creation": "2024-05-22 09:56:40.138102",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "subject_code",
+  "subject_name",
+  "maximum_marks"
+ ],
+ "fields": [
+  {
+   "fieldname": "subject_code",
+   "fieldtype": "Data",
+   "label": "Subject Code",
+   "unique": 1
+  },
+  {
+   "fieldname": "subject_name",
+   "fieldtype": "Data",
+   "label": "Subject Name",
+   "unique": 1
+  },
+  {
+   "fieldname": "maximum_marks",
+   "fieldtype": "Float",
+   "label": "Maximum Marks"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-06-11 17:11:02.921793",
+ "modified_by": "Administrator",
+ "module": "ESTATE PLAN",
+ "name": "Subcode",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

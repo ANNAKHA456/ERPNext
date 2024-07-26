@@ -227,3 +227,65 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+# hooks.py
+#/home/anakha/frappe-bench03/apps/estate_app/estate_app/estate_plan/doctype/student/student.py
+# app_include_js = "/estate_app/estate_plan/report/student_reports/student_reports.js"
+# doc_events = {
+#     "Student": {
+#         # will run after any DocType record is inserted into database
+#         "after_insert": "estate_app.estate_plan.doctype.student.student.after_insert_all"
+#     },
+# }
+
+# scheduler_events = {
+#     "cron": {
+#         "45 09 * * *": [
+#             "estate_app.test.send_notifications"
+#         ]
+    
+#     }
+#     # "all":["estate_app.test.send_notifications"]
+# }
+app_include_js = "/assets/estate_app/js/custom_script.js"
+fixtures = [
+    {
+        "doctype": "DocType",
+        "filters": {
+            "name": ["in", ["Teacher Details"]]
+        }
+    }
+]
+website_route_rules = [
+    {"from_route": "/students", "to_route": "get_index_html"}
+]
+website_route_rules = [
+    {"from_route": "/student-contact-vs", "to_route": "student_contact"}
+]
+
+# custom_app/hooks.py
+
+# jenv = {
+#     "methods": [
+#         "get_registration_number:estate_app.estate_plan.custom_scripts.jinja_script.get_registration_number",
+#         "get_department:estate_app.estate_plan.custom_scripts.jinja_script.get_department",
+#         "get_course:estate_app.estate_plan.custom_scripts.jinja_script.get_course",
+#         "get_dob:estate_app.estate_plan.custom_scripts.jinja_script.get_dob"
+#     ]
+# }
+
+
+# # custom_app/hooks.py
+
+# website_route_rules = [
+#     {'from_route': '/students/<register_number>', 'to_route': 'student_details.html'}
+# ]
+override_doctype_class = {
+    "Sales Invoice": "estate_app.override.sales_invoice.SalesInvoiceCustom"
+}
+# my_custom_app/hooks.py
+
+doc_events = {
+    "Agent": {
+        "on_update": "estate_app.estate_app.doctype.agent.agent_approval.approve"
+    }
+}

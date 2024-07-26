@@ -1,0 +1,40 @@
+{
+ "cards": [
+  {
+   "card": "Club Activity"
+  },
+  {
+   "card": "Number of Students-1"
+  }
+ ],
+ "charts": [
+  {
+   "chart": "Mark Det",
+   "width": "Full"
+  },
+  {
+   "chart": "Status Chart",
+   "width": "Half"
+  },
+  {
+   "chart": "Student Numbers",
+   "width": "Half"
+  },
+  {
+   "chart": "TOTAL MARKS",
+   "width": "Half"
+  }
+ ],
+ "creation": "2024-06-19 14:11:36.376204",
+ "dashboard_name": "Student Dashboard",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2024-06-19 15:36:36.316159",
+ "modified_by": "Administrator",
+ "module": "ESTATE PLAN",
+ "name": "Student Dashboard",
+ "owner": "Administrator"
+}
